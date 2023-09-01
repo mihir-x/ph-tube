@@ -49,7 +49,7 @@ const handleCategoryClick = async (id) => {
                     <div>
                         <h2 class="card-title">${element.title}</h2>
                         <p>${element.authors[0].profile_name} ${element.authors[0].verified?'<span id="verification" class="rounded-full bg-blue-600 p-1 px-2 text-white"><i class="fa-solid fa-check"></i></span>':''}</p>
-                        <p>${element.others.views}</p>
+                        <p>${element.others.views} views</p>
                     </div>
                 </div>
             `
