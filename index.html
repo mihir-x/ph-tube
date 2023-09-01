@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b08442d712.js" crossorigin="anonymous"></script>
     <title>PH Tube</title>
     <style>
         * {
@@ -27,7 +28,7 @@
                 <img src="./images/Logo.png" alt="">
             </div>
             <div class="">
-                <button class="font-medium p-2 md:px-4 rounded-lg lg:text-xl bg-[#25252533]">Sort By Views</button>
+                <button onclick="sortByViews()" class="font-medium p-2 md:px-4 rounded-lg lg:text-xl bg-[#25252533]">Sort By Views</button>
             </div>
             <div class="">
                 <button class="btn text-white bg-[#FF1F3D]">Blog</button>
@@ -35,7 +36,7 @@
         </div>
     </header>
 
-    <main class="max-w-screen-xl mx-auto"> 
+    <main class="max-w-screen-xl mx-auto">
         <!-- category list -->
         <div id="category-list-container" class="flex justify-center items-center gap-2 md:gap-8 mt-2 md:mt-4">
 
@@ -43,7 +44,7 @@
 
         <!-- category card section  -->
         <section id="card-container">
-            
+
         </section>
 
     </main>
