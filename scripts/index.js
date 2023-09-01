@@ -8,11 +8,10 @@ const loadAllCategory = async () => {
     categoryList.forEach(element => {
         const categoryBtn = document.createElement('button');
         categoryBtn.setAttribute('onclick', `handleCategoryClick(${element.category_id})`)
-        categoryBtn.classList = 'px-3 py-2 bg-[#25252526] rounded-lg font-medium text-sm md:text-lg active:bg-[#FF1F3D] active:text-white';
+        categoryBtn.classList = 'px-3 py-2 bg-[#25252526] rounded-lg font-medium text-sm md:text-lg active:bg-[#FF1F3D] active:text-white focus:bg-[#FF1F3D] focus:text-white';
         categoryBtn.innerText = `${element.category}`;
         categoryListContainer.appendChild(categoryBtn);
     })
-    console.log(categoryList);
 }
 
 //handle click on category and show all the data card related to the category
@@ -34,12 +33,14 @@ const handleCategoryClick = async (id) => {
     else {
         cardContainer.classList = 'p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-2 md:mt-4 lg:mt-10 gap-4';
         videoList.forEach(element => {
+            console.log(element);
             const div = document.createElement('div');
             div.setAttribute('views', `${element.others.views}`)
             div.classList = 'card bg-base-100 gap-5';
             div.innerHTML = `
-                <figure class="h-[12rem]">
+                <figure class=" h-[12rem] relative">
                 <img src="${element.thumbnail}" alt="Shoes" class="rounded-xl w-full h-full" />
+                <p class="absolute right-2 bottom-2 p-1 bg-black rounded-lg text-white">${element.others.posted_date?(parseInt(parseInt(element.others.posted_date)/3600)+'h '+parseInt((parseInt(element.others.posted_date)%3600)/60)+'m ago'):''}</p>
                 </figure>
                 <div class="flex gap-4">
                     <div class="h-10 w-10">
@@ -52,14 +53,13 @@ const handleCategoryClick = async (id) => {
                     </div>
                 </div>
             `
+            
             cardContainer.appendChild(div);
-
             // verification not working
 
         })
 
     }
-    console.log(videoList);
 }
 
 //sort by views
