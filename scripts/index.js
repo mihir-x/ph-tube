@@ -54,7 +54,6 @@ const handleCategoryClick = async (id) => {
                     </div>
                 </div>
             `
-            console.log(element.authors[0].verified , element.others.posted_date);
             cardContainer.appendChild(div);
         })
 
