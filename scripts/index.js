@@ -35,7 +35,6 @@ const handleCategoryClick = async (id) => {
     else {
         cardContainer.classList = 'p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-2 md:mt-4 lg:mt-10 gap-4';
         videoList.forEach(element => {
-            console.log(element.authors[0].verified);
             const div = document.createElement('div');
             div.setAttribute('views', `${element.others.views}`)
             div.classList = 'card bg-base-100 gap-5';
