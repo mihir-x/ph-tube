@@ -1,4 +1,3 @@
-console.log('Yea Allah, Save My Mom');
 //load all category and show the list of category
 const loadAllCategory = async () => {
     const response = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -56,7 +55,7 @@ const handleCategoryClick = async (id) => {
                     </div>
                 </div>
             `
-            
+            console.log(element.authors[0].verified);
             cardContainer.appendChild(div);
         })
 
