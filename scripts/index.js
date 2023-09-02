@@ -8,9 +8,12 @@ const loadAllCategory = async () => {
     categoryList.forEach(element => {
         const categoryBtn = document.createElement('button');
         categoryBtn.setAttribute('onclick', `handleCategoryClick(${element.category_id})`)
-        categoryBtn.classList = 'px-3 py-2 bg-[#25252526] rounded-lg font-medium text-sm md:text-lg focus:bg-[#FF1F3D] focus:text-white';
+        categoryBtn.classList = 'px-3 py-2 bg-[#25252526] rounded-lg font-medium text-sm md:text-lg focus:bg-[#FF1F3D] focus:text-white outline-none';
         categoryBtn.innerText = `${element.category}`;
         categoryListContainer.appendChild(categoryBtn);
+        if(categoryBtn.innerText === 'All'){
+            categoryBtn.focus();
+        }
     })
 }
 
@@ -40,7 +43,7 @@ const handleCategoryClick = async (id) => {
             div.innerHTML = `
                 <figure class=" h-[12rem] relative">
                 <img src="${element.thumbnail}" alt="Shoes" class="rounded-xl w-full h-full" />
-                <p class="absolute right-2 bottom-2 p-1 bg-black rounded-lg text-white">${element.others.posted_date?(parseInt(parseInt(element.others.posted_date)/3600)+'hrs '+parseInt((parseInt(element.others.posted_date)%3600)/60)+'min ago'):''}</p>
+                <p class="absolute right-2 bottom-2 bg-black rounded-lg text-white">${element.others.posted_date?(parseInt(parseInt(element.others.posted_date)/3600)+'hrs '+parseInt((parseInt(element.others.posted_date)%3600)/60)+'min ago'):''}</p>
                 </figure>
                 <div class="flex gap-4">
                     <div class="h-10 w-10">
